@@ -1,0 +1,26 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/_variables';
+
+
+.navbar {
+  background-color: $gray-900;
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: center;
+
+    .nav-link {
+      text-transform: uppercase;
+      margin: 8px 15px;
+    }
+
+    .active .nav-link {
+      border-style: solid;
+      border-width: 5px;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-image: linear-gradient(to right, $yellow, $orange) 1 10%;
+    }
+  }
+}
