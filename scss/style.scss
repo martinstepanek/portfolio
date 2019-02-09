@@ -1,0 +1,25 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/_variables';
+
+#page-content {
+  margin-top: 100px;
+}
+
+.main-title{
+  font-size: 4em;
+}
+
+.text-gradient{
+  background: linear-gradient(to right,  $yellow, $orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color:transparent;
+}
+
+.section-career{
+  background-color: $gray-900;
+}
+
+
+
+@import 'navbar';
