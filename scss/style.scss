@@ -2,24 +2,29 @@
 @import 'bootstrap/_variables';
 
 #page-content {
-  margin-top: 100px;
+  margin-top: 77px;
 }
 
-.main-title{
+.main-title {
   font-size: 4em;
 }
 
-.text-gradient{
-  background: linear-gradient(to right,  $yellow, $orange);
+.text-gradient {
+  background: linear-gradient(to right, $yellow, $orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color:transparent;
+  color: transparent;
 }
 
-.section-career{
-  background-color: $gray-900;
+.section-header {
+  background: linear-gradient(186deg, $black 80%, $gray-900 20%);
+  padding-bottom: 100px;
 }
 
+.section-career {
+  background: linear-gradient(186deg, $gray-900 80%, $black 20%);
+  padding-bottom: 100px;
+}
 
 
 @import 'navbar';
