@@ -3,6 +3,22 @@ const HWP = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurifyCSSPlugin = require('purifycss-webpack');
 
+let plugins = [
+    new HWP({
+        template: './public/index.html'
+    }),
+    new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+    }),
+];
+
+if (process.env.NODE_ENV === 'production') {
+    plugins.push(new PurifyCSSPlugin({
+        paths: [path.join(__dirname, 'dist/index.html')],
+    }));
+}
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -15,7 +31,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: [
                     {
-                        loader:  MiniCssExtractPlugin.loader
+                        loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader
                     }, {
                         loader: "css-loader",
                         options: {
@@ -37,18 +53,7 @@ module.exports = {
             },
         ]
     },
-    plugins: [
-        new HWP({
-            template: './public/index.html'
-        }),
-        new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        }),
-        new PurifyCSSPlugin({
-            paths: [path.join(__dirname, 'dist/index.html')],
-        })
-    ],
+    plugins: plugins,
     devServer: {
         port: 3000,
         historyApiFallback: {
