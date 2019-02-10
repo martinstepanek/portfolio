@@ -1,8 +1,20 @@
 @import 'bootstrap/functions';
 @import 'bootstrap/_variables';
+@import "bootstrap/mixins/breakpoints";
 
-#page-content {
-  margin-top: 77px;
+html{
+  scroll-behavior: smooth;
+}
+
+body, #page-content{
+  width: 100%;
+  height: 100%;
+}
+
+@include media-breakpoint-up(md) {
+  #page-content {
+    margin-top: 77px;
+  }
 }
 
 .main-title {
@@ -19,6 +31,7 @@
 .section-header {
   background: linear-gradient(186deg, $black 80%, $gray-900 20%);
   padding-bottom: 100px;
+  padding-top: 30px;
 }
 
 .section-career {
