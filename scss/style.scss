@@ -21,6 +21,10 @@ body, #page-content{
   font-size: 4em;
 }
 
+.text-content{
+  position: relative;
+}
+
 .text-gradient {
   background: linear-gradient(to right, $yellow, $orange);
   -webkit-background-clip: text;
@@ -41,4 +45,18 @@ body, #page-content{
 }
 
 
+.bg-lines{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/images/bg-lines.svg');
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-size: cover;
+}
+
+
 @import 'navbar';
+@import 'icons';
