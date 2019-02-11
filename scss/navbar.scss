@@ -7,6 +7,7 @@
   background-color: $gray-900;
   border-top: 1px solid $black;
   font-weight: $font-weight-bold;
+  z-index: 100;
 
   @include media-breakpoint-up(md) {
     border-top: 0;
