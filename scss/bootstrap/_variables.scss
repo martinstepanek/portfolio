@@ -297,7 +297,17 @@ $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
 $h1-font-size:                $font-size-base * 4 !default;
+$h1-font-size-sm-up:          $font-size-base * 5 !default;
+$h1-font-size-md-up:          $font-size-base * 6 !default;
+$h1-font-size-lg-up:          $font-size-base * 6 !default;
+$h1-font-size-xl-up:          $font-size-base * 7 !default;
+
 $h2-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size-sm-up:          $font-size-base * 3 !default;
+$h2-font-size-md-up:          $font-size-base * 3.5 !default;
+$h2-font-size-lg-up:          $font-size-base * 4 !default;
+$h2-font-size-xl-up:          $font-size-base * 4.5 !default;
+
 $h3-font-size:                $font-size-base * 2 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
