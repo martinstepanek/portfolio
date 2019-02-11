@@ -1,0 +1,23 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/_variables';
+@import 'bootstrap/mixins/breakpoints';
+
+.gradient-left {
+  background: linear-gradient(to left, $yellow, $orange);
+}
+
+.gradient-right {
+  background: linear-gradient(to right, $yellow, $orange);
+}
+
+.height-30{
+  height: 30px!important;
+}
+
+.height-60{
+  height: 60px!important;
+}
+
+.height-90{
+  height: 90px!important;
+}
