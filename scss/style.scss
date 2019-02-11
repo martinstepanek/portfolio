@@ -33,20 +33,8 @@ h1, .h1{
   display: inline-block;
 }
 
-.section-header {
-  background: linear-gradient(186deg, $black 80%, $gray-900 20%);
-  padding-bottom: 100px;
-  padding-top: 30px;
-  font-weight: $font-weight-bold;
-}
 
-.section-career {
-  background: linear-gradient(186deg, $gray-900 90%, $black 10%);
-  padding-bottom: 100px;
-}
-
-
-.bg-lines{
+.bg-lines {
   position: absolute;
   top: 0;
   left: 0;
@@ -63,4 +51,5 @@ h1, .h1{
 @import 'navbar';
 @import 'icons';
 @import 'timeline';
+@import 'sections';
 @import 'helpers';
