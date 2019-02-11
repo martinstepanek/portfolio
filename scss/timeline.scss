@@ -1,0 +1,72 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/_variables';
+@import 'bootstrap/mixins/breakpoints';
+
+$line-size: 2px;
+$line-shift: 9px;
+
+.timeline {
+
+  .dot {
+    width: calc(#{$h4-font-size} + 4px);
+    height: calc(#{$h4-font-size} + 4px);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    background-color: $white;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(to bottom, $yellow, $orange);
+      border: 3px solid $gray-900;
+      border-radius: 50%;
+      top: $line-size;
+      left: $line-size;
+      right: $line-size;
+      bottom: $line-size;
+      width: $h4-font-size;
+      height: $h4-font-size;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -9px;
+      left: calc(#{$h4-font-size/2} + 1px);
+      background-color: $white;
+      width: $line-size;
+      height: $line-shift;
+    }
+  }
+
+  .line {
+    background-color: $white;
+    width: $line-size;
+    margin: auto;
+    height: 100%;
+  }
+
+
+  .line-up, .line-down {
+    position: relative;
+  }
+
+  .line-up:before, .line-down:after {
+    content: '';
+    position: absolute;
+    left: -$line-shift;
+    width: 20px;
+    height: $line-size;
+    background: $white;
+  }
+
+  .line-up:before {
+    top: -$line-size;
+  }
+
+  .line-down:after {
+    bottom: -$line-size;
+  }
+
+}
