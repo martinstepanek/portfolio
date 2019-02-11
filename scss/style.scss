@@ -46,6 +46,40 @@ h1, .h1{
   background-size: cover;
 }
 
+.info-box {
+  background-color: $gray-900;
+  padding: 10px 15px;
+
+  @include media-breakpoint-up(sm) {
+    border-radius: 4em;
+    padding: 20px 30px !important;
+  }
+
+  @include media-breakpoint-up(md) {
+    border-radius: 6em;
+    padding: 30px 40px !important;
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-radius: 6em;
+    padding: 15px !important;
+    background-image: url('/public/images/icons/info.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    background-origin: content-box;
+  }
+
+  .info-box-text {
+    @include media-breakpoint-up(lg) {
+      padding-left: 170px !important;
+      padding-right: 10px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-left: 160px !important;
+    }
+  }
+}
 
 
 @import 'navbar';
