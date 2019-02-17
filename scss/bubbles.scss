@@ -31,6 +31,10 @@ $bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - 2*$bubble-margin-x
   position: relative;
   margin: $bubble-margin-y $bubble-margin-x;
 
+  &:hover{
+    text-decoration: none;
+  }
+
   @include media-breakpoint-up(sm) {
     &.bubble-fixed {
       text-align: center;
