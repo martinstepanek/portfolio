@@ -10,14 +10,14 @@ $line-top-line-height: 50px;
 $line-top-line-height-sm-up: $line-top-line-height + 50px;
 $line-top-line-height-md-up: $line-top-line-height + 40px + $menu-height - $menu-shift-md-up;
 $line-top-line-height-lg-up: $line-top-line-height + 35px + $menu-height - $menu-shift-md-up;
-$line-top-line-height-xl-up: $line-top-line-height + 25px + $menu-height;
-$line-top-line-height-xxl-up: $line-top-line-height + 60px + $menu-height;
+$line-top-line-height-xl-up: $line-top-line-height + 40px + $menu-height;
+$line-top-line-height-xxl-up: $line-top-line-height + 70px + $menu-height;
 $line-anchor-top: 95px;
 $line-anchor-top-sm-up: $line-anchor-top + 50px;
 $line-anchor-top-md-up: $line-anchor-top + 40px + $menu-height - $menu-shift-md-up;
 $line-anchor-top-lg-up: $line-anchor-top + 35px + $menu-height - $menu-shift-md-up;
-$line-anchor-top-xl-up: $line-anchor-top + 25px + $menu-height;
-$line-anchor-top-xxl-up: $line-anchor-top + 60px + $menu-height;
+$line-anchor-top-xl-up: $line-anchor-top + 40px + $menu-height;
+$line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
 
 .timeline {
 
