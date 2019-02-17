@@ -1,0 +1,100 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/_variables';
+@import 'bootstrap/mixins/breakpoints';
+
+$bubble-icon-width: 50px;
+$bubble-size: 2rem;
+
+.bubble {
+  background-color: $gray-900;
+  font-size: $bubble-size;
+  border-radius: $bubble-size;
+  padding: 0 30px;
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  position: relative;
+  margin: 10px;
+
+  @include media-breakpoint-up(sm) {
+    &.bubble-fixed {
+      text-align: center;
+      width: 230px;
+    }
+  }
+
+}
+
+.bubble-with-icon {
+  width: $bubble-icon-width;
+  height: $bubble-icon-width;
+  padding: 0;
+  margin: 10px 0;
+
+  @include media-breakpoint-up(sm) {
+    padding-left: $bubble-icon-width + 20px;
+    padding-right: 20px;
+    margin: 10px;
+    width: auto;
+  }
+  @include media-breakpoint-up(md) {
+    margin: 10px 25px;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 10px 35px;
+  }
+  @include media-breakpoint-up(xl) {
+    margin: 10px 45px;
+  }
+
+  .bubble-text {
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+      display: inline;
+    }
+  }
+
+  .bubble-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: $bubble-size;
+    background: linear-gradient(to right, $yellow, $orange);
+    color: $gray-900;
+    height: 100%;
+    width: $bubble-icon-width;
+
+    .icon-facebook, .icon-linkedin, .icon-twitter, .icon-github {
+      position: absolute;
+
+      @include media-breakpoint-up(sm) {
+        left: 10px!important;
+      }
+    }
+
+    .icon-facebook {
+      top: 7px;
+      left: 8px!important;
+    }
+
+    .icon-linkedin {
+      top: 5px;
+      left: 9px;
+    }
+
+    .icon-twitter {
+      top: 7px;
+      left: 10px;
+    }
+
+    .icon-github {
+      top: 7px;
+      left: 9px;
+
+      @include media-breakpoint-up(sm) {
+        top: 7px;
+        left: 9px!important;
+      }
+    }
+  }
+}
