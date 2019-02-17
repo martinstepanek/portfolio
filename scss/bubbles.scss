@@ -16,9 +16,9 @@ $bubble-margin-x-icon-xl-up: 45px;
 $bubble-absolute-width-md-up: 80px;
 $bubble-absolute-width-lg-up: 130px;
 $bubble-absolute-width-xl-up: 200px;
-$bubble-absolute-shift-md-up: -$bubble-absolute-width-md-up - $bubble-margin-x-icon-md-up - ($bubble-margin-x-icon-md-up - $bubble-margin-x);
-$bubble-absolute-shift-lg-up: -$bubble-absolute-width-lg-up - $bubble-margin-x-icon-lg-up - ($bubble-margin-x-icon-lg-up - 2*$bubble-margin-x);
-$bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - $bubble-margin-x-icon-xl-up - ($bubble-margin-x-icon-xl-up - 2*$bubble-margin-x);
+$bubble-absolute-shift-md-up: -$bubble-absolute-width-md-up - 2*$bubble-margin-x-icon-md-up + $bubble-margin-x;
+$bubble-absolute-shift-lg-up: -$bubble-absolute-width-lg-up - 2*$bubble-margin-x-icon-lg-up + $bubble-margin-x;
+$bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - 2*$bubble-margin-x-icon-xl-up + $bubble-margin-x;
 
 
 .bubble {
