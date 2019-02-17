@@ -195,7 +195,8 @@ $grid-breakpoints: map-merge(
     sm: 576px,
     md: 768px,
     lg: 992px,
-    xl: 1200px
+    xl: 1200px,
+    xxl: 1920px
   ),
   $grid-breakpoints
 );
@@ -1102,3 +1103,6 @@ $positions: static, relative, absolute, fixed, sticky !default;
 
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
+
+// MY GLOBAL VARIABLES
+$menu-height: 77px;
