@@ -27,13 +27,17 @@
       margin: 8px 15px;
     }
 
-    .active.nav-link {
-      border-style: solid;
-      border-width: 5px;
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
-      border-image: linear-gradient(to right, $yellow, $orange) 1 10%;
+    .nav-link{
+      border-bottom: 5px solid $gray-900;
+
+      &.active{
+        border-style: solid;
+        border-width: 5px;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-image: linear-gradient(to right, $yellow, $orange) 1 10%;
+      }
     }
   }
 
