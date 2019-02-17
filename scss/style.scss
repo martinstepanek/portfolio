@@ -63,13 +63,10 @@ h1, .h1 {
   }
 }
 
-.info-box-wrapper{
-  max-width: 800px!important;
-}
-
 .info-box {
   background-color: $gray-900;
   padding: 10px 15px;
+  max-width: 800px!important;
 
   @include media-breakpoint-up(sm) {
     border-radius: 4em;
