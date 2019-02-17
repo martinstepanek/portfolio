@@ -5,6 +5,22 @@
 $bubble-icon-width: 50px;
 $bubble-size: 2rem;
 
+$bubble-margin-y: 10px;
+$bubble-margin-x: 10px;
+$bubble-margin-x-icon: 0;
+$bubble-margin-x-icon-sm-up: 10px;
+$bubble-margin-x-icon-md-up: 25px;
+$bubble-margin-x-icon-lg-up: 35px;
+$bubble-margin-x-icon-xl-up: 45px;
+
+$bubble-absolute-width-md-up: 80px;
+$bubble-absolute-width-lg-up: 130px;
+$bubble-absolute-width-xl-up: 200px;
+$bubble-absolute-shift-md-up: -$bubble-absolute-width-md-up - $bubble-margin-x-icon-md-up - ($bubble-margin-x-icon-md-up - $bubble-margin-x);
+$bubble-absolute-shift-lg-up: -$bubble-absolute-width-lg-up - $bubble-margin-x-icon-lg-up - ($bubble-margin-x-icon-lg-up - 2*$bubble-margin-x);
+$bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - $bubble-margin-x-icon-xl-up - ($bubble-margin-x-icon-xl-up - 2*$bubble-margin-x);
+
+
 .bubble {
   background-color: $gray-900;
   font-size: $bubble-size;
@@ -13,13 +29,22 @@ $bubble-size: 2rem;
   display: inline-block;
   font-weight: $font-weight-bold;
   position: relative;
-  margin: 10px;
+  margin: $bubble-margin-y $bubble-margin-x;
 
   @include media-breakpoint-up(sm) {
     &.bubble-fixed {
       text-align: center;
       width: 230px;
+      height: $bubble-icon-width;
     }
+  }
+
+  &.bubble-to-left {
+    background: linear-gradient(to left, $black, $gray-900);
+  }
+
+  &.bubble-to-right {
+    background: linear-gradient(to right, $black, $gray-900);
   }
 
 }
@@ -28,22 +53,22 @@ $bubble-size: 2rem;
   width: $bubble-icon-width;
   height: $bubble-icon-width;
   padding: 0;
-  margin: 10px 0;
+  margin: $bubble-margin-y $bubble-margin-x-icon;
 
   @include media-breakpoint-up(sm) {
     padding-left: $bubble-icon-width + 20px;
     padding-right: 20px;
-    margin: 10px;
+    margin: $bubble-margin-y $bubble-margin-x-icon-sm-up;
     width: auto;
   }
   @include media-breakpoint-up(md) {
-    margin: 10px 25px;
+    margin: $bubble-margin-y $bubble-margin-x-icon-md-up;
   }
   @include media-breakpoint-up(lg) {
-    margin: 10px 35px;
+    margin: $bubble-margin-y $bubble-margin-x-icon-lg-up;
   }
   @include media-breakpoint-up(xl) {
-    margin: 10px 45px;
+    margin: $bubble-margin-y $bubble-margin-x-icon-xl-up;
   }
 
   .bubble-text {
@@ -68,13 +93,13 @@ $bubble-size: 2rem;
       position: absolute;
 
       @include media-breakpoint-up(sm) {
-        left: 10px!important;
+        left: 10px !important;
       }
     }
 
     .icon-facebook {
       top: 7px;
-      left: 8px!important;
+      left: 8px !important;
     }
 
     .icon-linkedin {
@@ -93,8 +118,51 @@ $bubble-size: 2rem;
 
       @include media-breakpoint-up(sm) {
         top: 7px;
-        left: 9px!important;
+        left: 9px !important;
       }
+    }
+  }
+}
+
+.bubble-wrapper {
+  position: relative;
+
+  .bubble-position-left, .bubble-position-right {
+    position: absolute;
+    top: 0;
+
+    @include media-breakpoint-up(md) {
+      width: $bubble-absolute-width-md-up;
+    }
+    @include media-breakpoint-up(lg) {
+      width: $bubble-absolute-width-lg-up;
+    }
+    @include media-breakpoint-up(xl) {
+      width: $bubble-absolute-width-xl-up;
+    }
+  }
+
+  .bubble-position-left {
+    @include media-breakpoint-up(md) {
+      left: $bubble-absolute-shift-md-up;
+    }
+    @include media-breakpoint-up(lg) {
+      left: $bubble-absolute-shift-lg-up;
+    }
+    @include media-breakpoint-up(xl) {
+      left: $bubble-absolute-shift-xl-up;
+    }
+  }
+
+  .bubble-position-right {
+    @include media-breakpoint-up(md) {
+      right: $bubble-absolute-shift-md-up;
+    }
+    @include media-breakpoint-up(lg) {
+      right: $bubble-absolute-shift-lg-up;
+    }
+    @include media-breakpoint-up(xl) {
+      right: $bubble-absolute-shift-xl-up;
     }
   }
 }
