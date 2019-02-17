@@ -58,7 +58,7 @@ module.exports = (env, argv) => {
                     use: ['style-loader', 'css-loader'],
                 },
                 {
-                    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                    test: /(untitled-font-1\.svg|\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$)/,
                     use: [{
                         loader: 'file-loader',
                         options: {
@@ -69,8 +69,14 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.(gif|png|jpe?g|svg)$/i,
+                    exclude: /scss\/fonts\/untitled-font-1\.svg/,
                     use: [
-                        'file-loader',
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[path][name].[ext]',
+                            },
+                        },
                         {
                             loader: 'image-webpack-loader',
                             options: {
