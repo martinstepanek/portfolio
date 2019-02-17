@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body{
+  position: relative;
+}
+
 body, #page-content {
   width: 100%;
   height: 100%;
@@ -42,10 +46,12 @@ h1, .h1 {
   position: absolute;
   top: 0;
   left: 0;
+  bottom:0;
+  right: 0;
   width: 100%;
   height: 100%;
   background-image: url('/public/images/bg-lines.svg');
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position-x: left;
   background-size: 100%;
 
