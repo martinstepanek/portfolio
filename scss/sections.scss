@@ -19,7 +19,6 @@ body, #page-content {
   margin-bottom: $menu-height;
 
   @include media-breakpoint-up(md) {
-    margin-top: $menu-height;
     margin-bottom: 0;
   }
 }
@@ -36,6 +35,7 @@ body, #page-content {
   }
   @include media-breakpoint-up(md) {
     padding-bottom: 220px;
+    padding-top: 100px + $menu-height;
   }
   @include media-breakpoint-up(xl) {
     background: linear-gradient(186deg, $black 80%, $gray-900 20%);
