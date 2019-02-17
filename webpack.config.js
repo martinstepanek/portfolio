@@ -2,6 +2,8 @@ const path = require('path');
 const HWP = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurifyCSSPlugin = require('purifycss-webpack');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 
 module.exports = (env, argv) => {
@@ -65,7 +67,46 @@ module.exports = (env, argv) => {
                         }
                     }]
                 },
-                
+                {
+                    test: /\.(gif|png|jpe?g|svg)$/i,
+                    use: [
+                        'file-loader',
+                        {
+                            loader: 'image-webpack-loader',
+                            options: {
+                                mozjpeg: {
+                                    progressive: true,
+                                    quality: 65
+                                },
+                                // optipng.enabled: false will disable optipng
+                                optipng: {
+                                    enabled: false,
+                                },
+                                pngquant: {
+                                    quality: '65-90',
+                                    speed: 4
+                                },
+                                gifsicle: {
+                                    interlaced: false,
+                                },
+                                // the webp option will enable WEBP
+                                webp: {
+                                    quality: 75
+                                }
+                            }
+                        },
+                    ],
+                }
+            ]
+        },
+        optimization: {
+            minimizer: [
+                new UglifyJsPlugin({
+                    cache: true,
+                    parallel: true,
+                    sourceMap: false
+                }),
+                new OptimizeCSSAssetsPlugin({})
             ]
         },
         plugins: plugins,
