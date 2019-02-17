@@ -11,9 +11,13 @@ body, #page-content {
   height: 100%;
 }
 
-@include media-breakpoint-up(md) {
-  #page-content {
+
+#page-content {
+  margin-bottom: 77px;
+
+  @include media-breakpoint-up(md) {
     margin-top: 77px;
+    margin-bottom: 0;
   }
 }
 

@@ -38,12 +38,6 @@
 }
 
 .section-contact {
-  margin-bottom: 77px;
-
-  @include media-breakpoint-up(md) {
-    margin-bottom: 0;
-  }
-
   @include media-breakpoint-up(xl) {
     margin-top: -100px;
   }
