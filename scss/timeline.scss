@@ -6,6 +6,17 @@ $line-size: 2px;
 $line-shift: 9px;
 $line-dark-border-size: 3px;
 
+$line-top-line-height: 50px;
+$line-top-line-height-sm-up: $line-top-line-height + 50px;
+$line-top-line-height-md-up: $line-top-line-height + 40px;
+$line-top-line-height-lg-up: $line-top-line-height + 35px;
+$line-top-line-height-xl-up: $line-top-line-height + 25px;
+$line-anchor-top: 95px;
+$line-anchor-top-sm-up: $line-anchor-top + 50px;
+$line-anchor-top-md-up: $line-anchor-top + 40px;
+$line-anchor-top-lg-up: $line-anchor-top + 35px;
+$line-anchor-top-xl-up: $line-anchor-top + 25px;
+
 .timeline {
 
   .dot {
@@ -73,22 +84,52 @@ $line-dark-border-size: 3px;
   .line-top:before {
     content: '';
     position: absolute;
-    top: -53px;
     width: $line-size;
-    height: 53px;
     margin: auto;
     background-color: $white;
+    top: -$line-top-line-height - $line-dark-border-size;
+    height: $line-top-line-height + $line-dark-border-size;
+
+    @include media-breakpoint-up(sm) {
+      top: -$line-top-line-height-sm-up - $line-dark-border-size;
+      height: $line-top-line-height-sm-up + $line-dark-border-size;
+    }
+    @include media-breakpoint-up(md) {
+      top: -$line-top-line-height-md-up - $line-dark-border-size;
+      height: $line-top-line-height-md-up + $line-dark-border-size;
+    }
+    @include media-breakpoint-up(lg) {
+      top: -$line-top-line-height-lg-up - $line-dark-border-size;
+      height: $line-top-line-height-lg-up + $line-dark-border-size;
+    }
+    @include media-breakpoint-up(xl) {
+      top: -$line-top-line-height-xl-up - $line-dark-border-size;
+      height: $line-top-line-height-xl-up + $line-dark-border-size;
+    }
   }
 
   .line-anchor {
     position: absolute;
-    top: -95px;
     left: -11px;
     background: linear-gradient(to bottom, $yellow, $orange);
     width: $h4-font-size;
     height: 2.5rem;
     border-radius: $h4-font-size;
     border: $line-dark-border-size solid $gray-900;
+    top: -$line-anchor-top;
+
+    @include media-breakpoint-up(sm) {
+      top: -$line-anchor-top-sm-up;
+    }
+    @include media-breakpoint-up(md) {
+      top: -$line-anchor-top-md-up;
+    }
+    @include media-breakpoint-up(lg) {
+      top: -$line-anchor-top-lg-up;
+    }
+    @include media-breakpoint-up(xl) {
+      top: -$line-anchor-top-xl-up;
+    }
 
     // circle border-bottom
     &:after{
