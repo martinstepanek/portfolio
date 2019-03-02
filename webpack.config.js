@@ -21,7 +21,7 @@ module.exports = (env, argv) => {
 
     if (argv.mode === 'production') {
         plugins.push(new PurifyCSSPlugin({
-            paths: [path.join(__dirname, 'dist/index.html')],
+            paths: [path.join(__dirname, 'public/index.html')],
         }));
         plugins.push(
             new HtmlCriticalWebpackPlugin({
