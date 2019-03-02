@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurifyCSSPlugin = require('purifycss-webpack');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 
 
 module.exports = (env, argv) => {
@@ -22,8 +23,22 @@ module.exports = (env, argv) => {
         plugins.push(new PurifyCSSPlugin({
             paths: [path.join(__dirname, 'dist/index.html')],
         }));
+        plugins.push(
+            new HtmlCriticalWebpackPlugin({
+                base: path.resolve(__dirname, 'dist'),
+                src: 'index.html',
+                dest: 'index.html',
+                inline: true,
+                minify: true,
+                extract: true,
+                width: 375,
+                height: 565,
+                penthouse: {
+                    blockJSRequests: false,
+                }
+            })
+        );
     }
-
 
     return {
         entry: './src/index.js',
