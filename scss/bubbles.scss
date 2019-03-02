@@ -31,7 +31,7 @@ $bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - 2*$bubble-margin-x
   position: relative;
   margin: $bubble-margin-y $bubble-margin-x;
 
-  &:hover{
+  &:hover {
     text-decoration: none;
   }
 
@@ -40,6 +40,9 @@ $bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - 2*$bubble-margin-x
       text-align: center;
       width: 230px;
       height: $bubble-icon-width;
+    }
+    &.bubble-sm {
+      width: 120px;
     }
   }
 
