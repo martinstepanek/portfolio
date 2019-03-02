@@ -28,6 +28,7 @@ $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
     display: inline-block;
     position: relative;
     background-color: $white;
+    z-index: 7;
 
     &:before {
       content: '';

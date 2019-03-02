@@ -9,6 +9,7 @@ h1, .h1 {
 
 .text-content {
   position: relative;
+  z-index: 10;
 }
 
 p a{
@@ -36,6 +37,7 @@ p a{
   background-repeat: repeat-y;
   background-position-x: left;
   background-size: 100%;
+  z-index: 5;
 
   @include media-breakpoint-up(sm) {
     background-size: 80%;
