@@ -11,7 +11,12 @@ module.exports = (env, argv) => {
 
     let plugins = [
         new HWP({
-            template: './public/index.html'
+            template: './public/index.html',
+            hash: true,
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true
+            }
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
