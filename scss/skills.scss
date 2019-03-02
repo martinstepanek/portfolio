@@ -8,12 +8,15 @@
   left: 0;
   width: 100%;
   height: 100%;
+  display: none;
 
   .bubble {
     position: absolute;
   }
 
   @include media-breakpoint-up(lg) {
+    display: block;
+    
     .bubble-first-left {
       top: 195px;
       right: 490px;
