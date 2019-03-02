@@ -11,6 +11,10 @@ h1, .h1 {
   position: relative;
 }
 
+p a{
+  text-decoration: underline;
+}
+
 .text-gradient {
   background: linear-gradient(to right, $yellow, $orange);
   -webkit-background-clip: text;
