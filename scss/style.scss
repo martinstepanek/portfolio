@@ -105,6 +105,14 @@ p a{
   color: black;
 }
 
+body::-webkit-scrollbar {
+  width: 5px
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, $yellow, $orange);
+}
+
 @import 'navbar';
 @import 'icons';
 @import 'timeline';
