@@ -96,6 +96,15 @@ p a{
   user-select: none;
 }
 
+::selection {
+  background: $yellow;
+  color: black;
+}
+::-moz-selection {
+  background: $yellow;
+  color: black;
+}
+
 @import 'navbar';
 @import 'icons';
 @import 'timeline';
