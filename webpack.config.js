@@ -5,6 +5,7 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 
 module.exports = (env, argv) => {
@@ -22,6 +23,10 @@ module.exports = (env, argv) => {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
+        new FaviconsWebpackPlugin({
+            logo: path.join(__dirname, 'public/images/logo.png'),
+            title: 'Martin Štěpánek',
+        })
     ];
 
     if (argv.mode === 'production') {
