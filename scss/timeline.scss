@@ -19,6 +19,8 @@ $line-anchor-top-lg-up: $line-anchor-top + 35px + $menu-height - $menu-shift-md-
 $line-anchor-top-xl-up: $line-anchor-top + 40px + $menu-height;
 $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
 
+$line-z-index: 7;
+
 .timeline {
 
   .dot {
@@ -28,7 +30,7 @@ $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
     display: inline-block;
     position: relative;
     background-color: $white;
-    z-index: 7;
+    z-index: $line-z-index;
 
     &:before {
       content: '';
@@ -60,6 +62,7 @@ $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
     width: $line-size;
     margin: auto;
     height: 100%;
+    z-index: $line-z-index;
   }
 
 
@@ -74,6 +77,7 @@ $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
     width: 20px;
     height: $line-size;
     background: $white;
+    z-index: $line-z-index;
   }
 
   .line-up:before {
@@ -92,6 +96,7 @@ $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
     background-color: $white;
     top: -$line-top-line-height - $line-dark-border-size;
     height: $line-top-line-height + $line-dark-border-size;
+    z-index: $line-z-index;
 
     @include media-breakpoint-up(sm) {
       top: -$line-top-line-height-sm-up - $line-dark-border-size;
@@ -124,6 +129,7 @@ $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
     border-radius: $h4-font-size;
     border: $line-dark-border-size solid $gray-900;
     top: -$line-anchor-top;
+    z-index: $line-z-index;
 
     @include media-breakpoint-up(sm) {
       top: -$line-anchor-top-sm-up;
@@ -153,6 +159,7 @@ $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
       border-bottom-left-radius: $h4-font-size;
       border-bottom-right-radius: $h4-font-size;
       border-top: 0;
+      z-index: $line-z-index;
     }
 
     // inner square
@@ -165,6 +172,7 @@ $line-anchor-top-xxl-up: $line-anchor-top + 70px + $menu-height;
       width: .5rem;
       height: .5rem;
       background-color: $gray-900;
+      z-index: $line-z-index;
     }
   }
 
