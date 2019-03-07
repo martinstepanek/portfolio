@@ -11,3 +11,6 @@ import('../public/images/line2.svg');
 import('../public/images/icons/info.svg');
 import('../public/images/icons/world.svg');
 
+
+import('../public/.htaccess');
+

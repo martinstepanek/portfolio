@@ -93,6 +93,15 @@ module.exports = (env, argv) => {
                     }]
                 },
                 {
+                    test: /\.htaccess/,
+                    use: [{
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name]',
+                        }
+                    }]
+                },
+                {
                     test: /\.(gif|png|jpe?g|svg)$/i,
                     exclude: /scss\/fonts\/untitled-font-1\.svg/,
                     use: [
