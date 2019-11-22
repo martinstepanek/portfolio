@@ -173,6 +173,10 @@ $line-z-index: 7;
       height: .5rem;
       background-color: $gray-900;
       z-index: $line-z-index;
+
+      @include media-breakpoint-up(xl) {
+        left: calc(1rem / 3.5);
+      }
     }
   }
 
