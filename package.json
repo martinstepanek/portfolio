@@ -6,8 +6,7 @@
   "scripts": {
     "run": "webpack-dev-server --mode development --hot --open",
     "run-host": "webpack-dev-server --mode development --hot --open --host 192.168.1.118",
-    "build": "webpack --mode=production",
-    "update-build": "npm run build && git add dist/ && git commit -m\"Update build\""
+    "build": "webpack --mode=production"
   },
   "author": "Martin Štěpánek",
   "license": "ISC",
