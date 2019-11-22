@@ -102,6 +102,15 @@ module.exports = (env, argv) => {
                     }]
                 },
                 {
+                    test: /\.(txt|xml)$/i,
+                    use: [{
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                        }
+                    }]
+                },
+                {
                     test: /\.(gif|png|jpe?g|svg)$/i,
                     exclude: /scss\/fonts\/untitled-font-1\.svg/,
                     use: [

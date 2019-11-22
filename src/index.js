@@ -13,4 +13,6 @@ import('../public/images/icons/world.svg');
 
 
 import('../public/.htaccess');
+import('../public/robots.txt');
+import('../public/sitemap.xml');
 
