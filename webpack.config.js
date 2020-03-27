@@ -1,7 +1,7 @@
 const path = require('path');
 const HWP = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const PurifyCSSPlugin = require('purifycss-webpack');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
     ];
 
     if (argv.mode === 'production') {
-        plugins.push(new PurifyCSSPlugin({
+        plugins.push(new PurgecssPlugin({
             paths: [path.join(__dirname, 'public/index.html')],
         }));
         plugins.push(
