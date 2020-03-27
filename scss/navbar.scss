@@ -1,0 +1,55 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/_variables';
+@import 'bootstrap/mixins/breakpoints';
+
+
+.navbar {
+  background-color: $gray-900;
+  border-top: 1px solid $black;
+  font-weight: $font-weight-bold;
+  z-index: 100;
+
+  @include media-breakpoint-up(md) {
+    border-top: 0;
+    border-bottom: 1px solid $black;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+      justify-content: left;
+    }
+
+    .nav-link {
+      text-transform: uppercase;
+      margin: 8px 15px;
+    }
+
+    .nav-link{
+      border-bottom: 5px solid $gray-900;
+
+      &.active{
+        border-style: solid;
+        border-width: 5px;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-image: linear-gradient(to right, $yellow, $orange) 1 10%;
+      }
+    }
+  }
+
+  &.navbar-fixed {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    @include media-breakpoint-up(md) {
+      top: 0;
+      bottom: auto;
+    }
+  }
+}

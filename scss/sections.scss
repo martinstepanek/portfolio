@@ -1,0 +1,102 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/_variables';
+@import 'bootstrap/mixins/breakpoints';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+body, #page-content {
+  width: 100%;
+  height: 100%;
+}
+
+#page-content {
+  margin-bottom: $menu-height;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}
+
+.section-header {
+  background: linear-gradient(186deg, $black 85%, $gray-900 15%);
+  padding-bottom: 130px;
+  padding-top: 100px;
+  font-weight: $font-weight-bold;
+
+  @include media-breakpoint-up(sm) {
+    background: linear-gradient(186deg, $black 80%, $gray-900 20%);
+    padding-bottom: 200px;
+  }
+  @include media-breakpoint-up(md) {
+    padding-bottom: 220px;
+    padding-top: 100px + $menu-height;
+  }
+  @include media-breakpoint-up(xl) {
+    background: linear-gradient(186deg, $black 80%, $gray-900 20%);
+  }
+  @include media-breakpoint-up(xxl) {
+    background: linear-gradient(186deg, $black 75%, $gray-900 25%);
+  }
+}
+
+.section-career {
+  background: linear-gradient(186deg, $gray-900 95%, $black 5%);
+  padding-bottom: 100px;
+  position: relative;
+
+
+  @include media-breakpoint-up(sm) {
+    background: linear-gradient(186deg, $gray-900 90%, $black 10%);
+    padding-bottom: 200px;
+  }
+  @include media-breakpoint-up(md) {
+    padding-bottom: 220px;
+    padding-top: $menu-height;
+    margin-top: -$menu-shift-md-up;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-top: 0;
+  }
+  @include media-breakpoint-up(xl) {
+    background: linear-gradient(186deg, $gray-900 80%, $black 20%);
+  }
+
+
+  .bg-line {
+    position: absolute;
+    width: 60%;
+    top: -100px;
+    left: 22%;
+    display: none;
+    opacity: .3;
+    height: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+    z-index: 5;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 0;
+      height: 90%;
+      left: 20%;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-top: -30px;
+      height: 95%;
+    }
+  }
+}
+
+.section-contact {
+  @include media-breakpoint-up(xl) {
+    margin-top: -100px;
+  }
+}

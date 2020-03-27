@@ -1,0 +1,175 @@
+@import 'bootstrap/functions';
+@import 'bootstrap/_variables';
+@import 'bootstrap/mixins/breakpoints';
+
+$bubble-icon-width: 50px;
+$bubble-size: 2rem;
+
+$bubble-margin-y: 10px;
+$bubble-margin-x: 10px;
+$bubble-margin-x-icon: 0;
+$bubble-margin-x-icon-sm-up: 10px;
+$bubble-margin-x-icon-md-up: 25px;
+$bubble-margin-x-icon-lg-up: 35px;
+$bubble-margin-x-icon-xl-up: 45px;
+
+$bubble-absolute-width-md-up: 80px;
+$bubble-absolute-width-lg-up: 130px;
+$bubble-absolute-width-xl-up: 200px;
+$bubble-absolute-shift-md-up: -$bubble-absolute-width-md-up - 2*$bubble-margin-x-icon-md-up + $bubble-margin-x;
+$bubble-absolute-shift-lg-up: -$bubble-absolute-width-lg-up - 2*$bubble-margin-x-icon-lg-up + $bubble-margin-x;
+$bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - 2*$bubble-margin-x-icon-xl-up + $bubble-margin-x;
+
+
+.bubble {
+  background-color: $gray-900;
+  font-size: $bubble-size;
+  border-radius: $bubble-size;
+  padding: 0 30px;
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  position: relative;
+  margin: $bubble-margin-y $bubble-margin-x;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &.bubble-fixed {
+      text-align: center;
+      width: 230px;
+      height: $bubble-icon-width;
+    }
+    &.bubble-sm {
+      width: 120px;
+    }
+  }
+
+  &.bubble-to-left {
+    background: linear-gradient(to left, $black, $gray-900);
+  }
+
+  &.bubble-to-right {
+    background: linear-gradient(to right, $black, $gray-900);
+  }
+
+}
+
+.bubble-with-icon {
+  width: $bubble-icon-width;
+  height: $bubble-icon-width;
+  padding: 0;
+  margin: $bubble-margin-y $bubble-margin-x-icon;
+
+  @include media-breakpoint-up(sm) {
+    padding-left: $bubble-icon-width + 20px;
+    padding-right: 20px;
+    margin: $bubble-margin-y $bubble-margin-x-icon-sm-up;
+    width: auto;
+  }
+  @include media-breakpoint-up(md) {
+    margin: $bubble-margin-y $bubble-margin-x-icon-md-up;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: $bubble-margin-y $bubble-margin-x-icon-lg-up;
+  }
+  @include media-breakpoint-up(xl) {
+    margin: $bubble-margin-y $bubble-margin-x-icon-xl-up;
+  }
+
+  .bubble-text {
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+      display: inline;
+    }
+  }
+
+  .bubble-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: $bubble-size;
+    background: linear-gradient(to right, $yellow, $orange);
+    color: $gray-900;
+    height: 100%;
+    width: $bubble-icon-width;
+
+    .icon-facebook, .icon-linkedin, .icon-twitter, .icon-github {
+      position: absolute;
+
+      @include media-breakpoint-up(sm) {
+        left: 10px !important;
+      }
+    }
+
+    .icon-facebook {
+      top: 7px;
+      left: 8px !important;
+    }
+
+    .icon-linkedin {
+      top: 5px;
+      left: 9px;
+    }
+
+    .icon-twitter {
+      top: 7px;
+      left: 10px;
+    }
+
+    .icon-github {
+      top: 7px;
+      left: 9px;
+
+      @include media-breakpoint-up(sm) {
+        top: 7px;
+        left: 9px !important;
+      }
+    }
+  }
+}
+
+.bubble-wrapper {
+  position: relative;
+
+  .bubble-position-left, .bubble-position-right {
+    position: absolute;
+    top: 0;
+
+    @include media-breakpoint-up(md) {
+      width: $bubble-absolute-width-md-up;
+    }
+    @include media-breakpoint-up(lg) {
+      width: $bubble-absolute-width-lg-up;
+    }
+    @include media-breakpoint-up(xl) {
+      width: $bubble-absolute-width-xl-up;
+    }
+  }
+
+  .bubble-position-left {
+    @include media-breakpoint-up(md) {
+      left: $bubble-absolute-shift-md-up;
+    }
+    @include media-breakpoint-up(lg) {
+      left: $bubble-absolute-shift-lg-up;
+    }
+    @include media-breakpoint-up(xl) {
+      left: $bubble-absolute-shift-xl-up;
+    }
+  }
+
+  .bubble-position-right {
+    @include media-breakpoint-up(md) {
+      right: $bubble-absolute-shift-md-up;
+    }
+    @include media-breakpoint-up(lg) {
+      right: $bubble-absolute-shift-lg-up;
+    }
+    @include media-breakpoint-up(xl) {
+      right: $bubble-absolute-shift-xl-up;
+    }
+  }
+}
