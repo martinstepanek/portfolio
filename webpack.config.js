@@ -32,6 +32,7 @@ module.exports = (env, argv) => {
     if (argv.mode === 'production') {
         plugins.push(new PurgecssPlugin({
             paths: [path.join(__dirname, 'public/index.html')],
+            whitelist: ['carousel-item-next', 'carousel-item-prev', 'carousel-item-left', 'carousel-item-right']
         }));
         plugins.push(
             new HtmlCriticalWebpackPlugin({
