@@ -5,6 +5,8 @@
 $bubble-icon-width: 50px;
 $bubble-size: 2rem;
 
+$bubble-hover-duration: 0.25s;
+
 $bubble-margin-y: 10px;
 $bubble-margin-x: 10px;
 $bubble-margin-x-icon: 0;
@@ -62,6 +64,26 @@ $bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - 2*$bubble-margin-x
   padding: 0;
   margin: $bubble-margin-y $bubble-margin-x-icon;
 
+  position: relative;
+  transition: color $bubble-hover-duration ease;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $bubble-icon-width;
+    height: 100%;
+
+    transform-origin: left;
+    transition: width $bubble-hover-duration ease;
+    z-index: -1;
+
+    border-radius: $bubble-size;
+    background: linear-gradient(to right, $yellow, $orange);
+  }
+
   @include media-breakpoint-up(sm) {
     padding-left: $bubble-icon-width + 20px;
     padding-right: 20px;
@@ -90,11 +112,9 @@ $bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - 2*$bubble-margin-x
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: $bubble-size;
-    background: linear-gradient(to right, $yellow, $orange);
     color: $gray-900;
-    height: 100%;
     width: $bubble-icon-width;
+    transition: color $bubble-hover-duration ease;
 
     .icon-facebook, .icon-linkedin, .icon-twitter, .icon-github {
       position: absolute;
@@ -128,6 +148,18 @@ $bubble-absolute-shift-xl-up: -$bubble-absolute-width-xl-up - 2*$bubble-margin-x
         left: 9px !important;
       }
     }
+  }
+}
+
+a.bubble-with-icon:hover {
+  color: $gray-900;
+
+  &:after {
+    width: 100%;
+  }
+
+  .bubble-icon {
+    color: $black;
   }
 }
 
