@@ -35,5 +35,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+next.config.js
+commitlint.config.js
+sentry.client.config.js
+sentry.server.config.js
+
+
 # Storybook build
 storybook-static
